@@ -1,0 +1,124 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2019-08-02 14:43+0300\n"
+"PO-Revision-Date: 2019-08-02 14:43+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: uk_UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr__;esc_attr_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/class-admin.php:33 includes/class-admin.php:34
+msgid "ПГТУ \"Очепятки\""
+msgstr "ПДТУ \"Очепятки\""
+
+#: includes/class-admin.php:57
+msgid "Параметри форми"
+msgstr "Параметри форми"
+
+#: includes/class-admin.php:64
+msgid "Email для оповещения"
+msgstr "Email для сповіщення"
+
+#: includes/class-admin.php:70
+msgid "список адресов email через запятую или пробел"
+msgstr "список адрес email через кому або пробіл"
+
+#: includes/class-ajax.php:75
+msgid "Оповещение об ошибке на сайте"
+msgstr "Оповіщення про помилку на сайті"
+
+#: includes/class-ajax.php:76
+msgid "Информация об ошибке"
+msgstr "Інформація про помилку"
+
+#: includes/class-ajax.php:80
+msgid "Страница с ошибкой"
+msgstr "Сторінка з помилкою"
+
+#: includes/class-ajax.php:89 includes/class-public.php:173
+msgid "Выделенный текст"
+msgstr "Виділений текст"
+
+#: includes/class-ajax.php:93
+msgid "Описание"
+msgstr "Опис"
+
+#: includes/class-ajax.php:97
+msgid "Информация об авторе сообщения"
+msgstr "Інформація про автора повідомлення"
+
+#: includes/class-ajax.php:100
+msgid "IP автора"
+msgstr "IP автора"
+
+#: includes/class-ajax.php:104
+msgid "Имя автора"
+msgstr "Ім'я автора"
+
+#: includes/class-ajax.php:109
+msgid "Email автора"
+msgstr "Email автора"
+
+#: includes/class-ajax.php:131
+msgid "Сообщение с сайта"
+msgstr "Повідомлення з сайту"
+
+#: includes/class-ajax.php:149
+msgid "Попробуйте позже или обратитесь к администратору."
+msgstr "Спробуйте пізніше або зверніться до адміністратора."
+
+#: includes/class-ajax.php:166
+msgid "Выделите текст или напишите сообщение."
+msgstr "Виділіть текст або напишіть повідомлення."
+
+#: includes/class-ajax.php:179
+msgid "Вы в \"чёрном списке\". Обратитесь к администратору сайта."
+msgstr "Ви в \"чорному списку\". Зверніться до адміністратора сайту."
+
+#: includes/class-public.php:77
+msgid "Сообщение отправлено."
+msgstr "Повідомлення відправлено."
+
+#: includes/class-public.php:78
+msgid "Произошла ошибка."
+msgstr "Виникла помилка."
+
+#: includes/class-public.php:79
+msgid ""
+"Если вы заметили ошибку, пожалуйста, выделите фрагмент текста и нажмите Ctrl "
+"+ Enter или это сообщение."
+msgstr ""
+"Якщо ви помітили помилку, будь ласка, виділіть фрагмент тексту і натисніть "
+"Ctrl + Enter або це повідомлення."
+
+#: includes/class-public.php:148
+msgid "Ваше имя"
+msgstr "Ваше ім'я"
+
+#: includes/class-public.php:154
+msgid "Ваш email"
+msgstr "Ваш email"
+
+#: includes/class-public.php:179
+msgid "Сообщение"
+msgstr "Повідомлення"
+
+#: includes/class-public.php:196
+msgid "Отправить"
+msgstr "Відправити"
+
+#: includes/class-public.php:197
+msgid "Сообщите об ошибке"
+msgstr "Повідомте про помилку"
+
+#~ msgid "Имя email"
+#~ msgstr "Ім'я email"
