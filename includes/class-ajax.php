@@ -70,52 +70,9 @@ class pstuMisspellingsAjax extends pstuMisspellingsAbstractPath {
 
 	protected function get_message() {
 		$result = __return_empty_string();
+		$blog_name = get_bloginfo( 'name' );
 		ob_start();
-		?>
-			<h1><?php _e( 'Оповещение об ошибке на сайте', $this->domain ); ?></h1>
-			<h2><?php _e( 'Информация об ошибке', $this->domain ); ?></h2>
-			<table>
-				<?php if ( ! empty( $this->fields[ 'post' ] ) ) : ?>
-				<tr>
-					<td><?php _e( 'Страница с ошибкой', $this->domain ); ?></td>
-					<td>
-						<a href="<?php echo  get_permalink( $this->fields[ 'post' ] ); ?>">
-							<?php echo get_the_title( $this->fields[ 'post' ] ); ?>
-						</a>
-					</td>
-				</tr>
-				<?php endif; ?>
-				<tr>
-					<td><?php _e( 'Выделенный текст', $this->domain ); ?></td>
-					<td><?php echo $this->fields[ 'error' ]; ?></td>
-				</tr>
-				<tr>
-					<td><?php _e( 'Описание', $this->domain ); ?></td>
-					<td><?php echo $this->fields[ 'message' ]; ?></td>
-				</tr>
-			</table>
-			<h2><?php _e( 'Информация об авторе сообщения', $this->domain ); ?></h2>
-			<table>
-				<tr>
-					<td><?php _e( 'IP автора', $this->domain ); ?></td>
-					<td><?php echo $this->get_the_user_ip(); ?></td>
-				</tr>
-				<tr>
-					<td><?php _e( 'Имя автора', $this->domain ); ?></td>
-					<td><?php echo $this->fields[ 'name' ] ?></td>
-				</tr>
-				<?php if ( ! empty( $this->fields[ 'email' ] ) ) : ?>
-					<tr>
-						<td><?php _e( 'Email автора', $this->domain ); ?></td>
-						<td>
-							<a href="mailto:<?php echo $this->fields[ 'email' ] ?>">
-								<?php echo $this->fields[ 'email' ]; ?>
-							</a>
-						</td>
-					</tr>
-				<?php endif; ?>
-			</table>
-		<?php
+		include PSTU_MISSPELLINGS_VIEWS . 'admin-message.php';
 		$result = ob_get_contents();
 		ob_end_clean();
 		return $result;

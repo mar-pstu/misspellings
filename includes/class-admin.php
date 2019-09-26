@@ -62,7 +62,7 @@ class pstuMisspellingsAdmin extends pstuMisspellingsAbstractPath {
 		add_settings_field(
 			'emails',
 			__( 'Email для оповещения', $this->domain ),
-			array( $this, 'fields' ),
+			array( $this, 'get_control' ),
 			$this->slug,
 			'form_settings',
 			 array(
@@ -83,11 +83,11 @@ class pstuMisspellingsAdmin extends pstuMisspellingsAbstractPath {
 	 * @param    array     $params    Параметры поля формы
 	 * @return   string    $result    html
 	 */
-	public function fields( $args ) {
+	public function get_control( $args ) {
 		extract( $args );
 		$options = get_option( $this->slug );
-		switch ( $id ) {
-			case 'emails':
+		switch ( $type ) {
+			case 'text':
 				printf(
 					'<input type="text" name="%1$s[%2$s]" value="%3$s" placeholder="%4$s" class="regular-text" id="%1$s_%2$s" /> %5$s',
 					$this->slug,
@@ -132,16 +132,7 @@ class pstuMisspellingsAdmin extends pstuMisspellingsAbstractPath {
 	 *
 	 */
 	public function show() {
-		?>
-			<div class="wrap">
-				<h1><?php echo get_admin_page_title(); ?></h1>
-				<form action="options.php" method="POST">
-					<?php settings_fields( $this->slug ); ?>
-					<?php do_settings_sections( $this->slug ); ?>
-					<?php submit_button(); ?>  
-				</form>
-			</div>
-		<?php		
+		include PSTU_MISSPELLINGS_PATTERNS . 'settings-page.php';
 	}
 
 

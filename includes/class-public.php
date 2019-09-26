@@ -90,12 +90,12 @@ if ( ! defined( 'ABSPATH' ) ) {	exit; };
 	 * @return   string    $result     html
  	 */
  	function show_message( $content ) {
- 		$result = sprintf(
+ 		$result = ( is_singular() ) ? sprintf(
  			'%1$s <a id="%2$s_button" class="%2$s_button" role="button" href="#%2$s_modal" data-post="%3$s"> </a>',
  			$content,
  			$this->slug,
  			get_the_ID()
- 		);
+ 		) : $content;
  		return $result;
  	}
 
@@ -163,7 +163,7 @@ if ( ! defined( 'ABSPATH' ) ) {	exit; };
 		);
  		$this->fields[ 'post' ] = array(
 			'type'         => 'hidden',
-			'value'        => '',
+			'value'        => get_the_ID(),
 			'placeholder'  => '',
 			'readonly'     => true,
 		);
@@ -184,18 +184,20 @@ if ( ! defined( 'ABSPATH' ) ) {	exit; };
 
 
  	public function render_form() {
- 		wp_enqueue_style( 'fancybox' );
- 		wp_enqueue_script( 'fancybox' );
- 		wp_enqueue_style( $this->slug );
- 		wp_enqueue_script( $this->slug );
- 		$this->set_form_fields();
- 		printf(
- 			'<div style="display: none;" class="%1$s_modal" id="%1$s_modal"><form id="%1$s_form" class="%1$s_form"><h3>%4$s</h3>%2$s<input type="submit" value="%3$s"></form></div>',
- 			$this->slug,
- 			$this->get_form_controls(),
- 			esc_attr__( 'Отправить', $this->domain ),
- 			__( 'Сообщите об ошибке', $this->domain )
- 		);
+ 		if ( is_singular() ) {
+ 			wp_enqueue_style( 'fancybox' );
+	 		wp_enqueue_script( 'fancybox' );
+	 		wp_enqueue_style( $this->slug );
+	 		wp_enqueue_script( $this->slug );
+	 		$this->set_form_fields();
+	 		printf(
+	 			'<div style="display: none;" class="%1$s_modal" id="%1$s_modal"><form id="%1$s_form" class="%1$s_form"><h3>%4$s</h3>%2$s<input type="submit" value="%3$s"></form></div>',
+	 			$this->slug,
+	 			$this->get_form_controls(),
+	 			esc_attr__( 'Отправить', $this->domain ),
+	 			__( 'Сообщите об ошибке', $this->domain )
+	 		);
+ 		}
  	}
 
 
