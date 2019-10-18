@@ -32,7 +32,6 @@
 		function open() {
 			var $button = jQuery( this ),
 				error = getSelectedText();
-			console.log( message() );
 			if ( ! modal_flag ) {
 				jQuery.fancybox.open( {
 					src: '#' + $modal.attr( 'id' ),
@@ -84,7 +83,6 @@
 
 		function send() {
 			event.preventDefault();
-			console.log( message() );
 			jQuery.ajax( {
 				type: pstuMisspellings.method,
 				url: pstuMisspellings.ajaxurl,
@@ -97,7 +95,6 @@
 					jQuery.fancybox.close();
 				},
 				success: function( data ) {
-					console.log( data );
 					if ( 'underfined' != typeof( data.success ) && data.success ) {
 						$form.find( 'input:not( [type=submit] ):not([readonly]), textarea' ).val( '' );
 						answer( pstuMisspellings.success );

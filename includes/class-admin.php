@@ -132,7 +132,7 @@ class pstuMisspellingsAdmin extends pstuMisspellingsAbstractPath {
 	 *
 	 */
 	public function show() {
-		include PSTU_MISSPELLINGS_PATTERNS . 'settings-page.php';
+		include PSTU_MISSPELLINGS_VIEWS . 'settings-page.php';
 	}
 
 
